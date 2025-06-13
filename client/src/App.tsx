@@ -166,27 +166,27 @@ function App() {
           <LanguageSelector />
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-4">
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-6 md:p-8">
           <div className="w-full max-w-md">
-            <div className="text-center mb-8">
-              <div className="text-6xl mb-4">🎁</div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('welcome.title')}</h1>
-              <p className="text-gray-600">{t('welcome.subtitle')}</p>
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">🎁</div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 px-2">{t('welcome.title')}</h1>
+              <p className="text-base sm:text-lg text-gray-600 px-2">{t('welcome.subtitle')}</p>
             </div>
 
-            <Card className="card-shadow">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-gray-800">{t('registration.createAccount')}</CardTitle>
-                <CardDescription>{t('registration.enterDetails')}</CardDescription>
+            <Card className="card-shadow mx-2 sm:mx-0">
+              <CardHeader className="text-center pb-4 px-4 sm:px-6 pt-6">
+                <CardTitle className="text-lg sm:text-xl text-gray-800">{t('registration.createAccount')}</CardTitle>
+                <CardDescription className="text-sm sm:text-base">{t('registration.enterDetails')}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-4 sm:px-6 pb-6">
                 {error && (
                   <Alert className="mb-4 border-red-200 bg-red-50">
                     <AlertDescription className="text-red-700">{error}</AlertDescription>
                   </Alert>
                 )}
                 
-                <form onSubmit={handleRegistration} className="space-y-4">
+                <form onSubmit={handleRegistration} className="space-y-4 sm:space-y-5">
                   <div className="space-y-2">
                     <Input
                       placeholder={t('registration.firstName')}
@@ -194,7 +194,7 @@ function App() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setFormData((prev: CreateUserInput) => ({ ...prev, first_name: e.target.value }))
                       }
-                      className="h-12 text-base airbnb-input"
+                      className="h-14 sm:h-12 text-base sm:text-lg airbnb-input mobile-touch-target"
                       required
                     />
                   </div>
@@ -206,7 +206,7 @@ function App() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setFormData((prev: CreateUserInput) => ({ ...prev, last_name: e.target.value }))
                       }
-                      className="h-12 text-base airbnb-input"
+                      className="h-14 sm:h-12 text-base sm:text-lg airbnb-input mobile-touch-target"
                       required
                     />
                   </div>
@@ -219,7 +219,7 @@ function App() {
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setFormData((prev: CreateUserInput) => ({ ...prev, phone_number: e.target.value }))
                       }
-                      className="h-12 text-base airbnb-input"
+                      className="h-14 sm:h-12 text-base sm:text-lg airbnb-input mobile-touch-target"
                       required
                     />
                   </div>
@@ -227,22 +227,22 @@ function App() {
                   <Button 
                     type="submit" 
                     disabled={isLoading}
-                    className="w-full h-12 text-base sweet-button airbnb-button"
+                    className="w-full h-14 sm:h-12 text-base sm:text-lg font-semibold sweet-button airbnb-button mobile-touch-target mt-6"
                   >
                     {isLoading ? t('registration.creatingAccount') : t('registration.joinProgram')}
                   </Button>
                 </form>
 
-                <Separator className="my-6" />
+                <Separator className="my-6 sm:my-8" />
 
                 <div className="text-center">
-                  <p className="text-sm text-gray-600 mb-4">{t('demo.description')}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 px-2">{t('demo.description')}</p>
                   <Button
                     onClick={handleDemoMode}
                     variant="outline"
-                    className="w-full h-12 text-base font-medium rounded-lg border-2 border-blue-200 text-blue-600 hover:bg-blue-50 airbnb-button"
+                    className="w-full h-14 sm:h-12 text-base sm:text-lg font-medium rounded-lg border-2 border-blue-200 text-blue-600 hover:bg-blue-50 airbnb-button mobile-touch-target"
                   >
-                    <Eye className="w-4 h-4 mr-2" />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     {t('demo.viewDemo')}
                   </Button>
                 </div>
@@ -262,25 +262,25 @@ function App() {
           <LanguageSelector />
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-4">
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-6 md:p-8">
           <div className="w-full max-w-md">
-            <div className="text-center mb-8">
-              <div className="text-6xl mb-4">✨</div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('passDownload.almostReady')}</h1>
-              <p className="text-gray-600">{t('passDownload.addToWallet')}</p>
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">✨</div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 px-2">{t('passDownload.almostReady')}</h1>
+              <p className="text-base sm:text-lg text-gray-600 px-2">{t('passDownload.addToWallet')}</p>
             </div>
 
-            <Card className="card-shadow">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-green-600" />
+            <Card className="card-shadow mx-2 sm:mx-0">
+              <CardHeader className="text-center pb-4 px-4 sm:px-6 pt-6">
+                <div className="w-16 h-16 sm:w-18 sm:h-18 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 sm:w-9 sm:h-9 text-green-600" />
                 </div>
-                <CardTitle className="text-xl text-gray-800">{t('passDownload.accountCreated')}</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-lg sm:text-xl text-gray-800">{t('passDownload.accountCreated')}</CardTitle>
+                <CardDescription className="text-sm sm:text-base">
                   {t('passDownload.helloUser', { name: currentUser?.first_name || '' })}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 px-4 sm:px-6 pb-6">
                 <div className="text-center">
                   <div className="text-4xl mb-2">{walletInfo.logo}</div>
                   <h3 className="font-semibold text-gray-800 mb-2">{walletInfo.name}</h3>
@@ -298,7 +298,7 @@ function App() {
                         <Smartphone className="w-10 h-10 text-gray-400" />
                       </div>
                       <Button 
-                        className={`w-full h-12 text-base font-medium rounded-lg ${walletInfo.color} airbnb-button`}
+                        className={`w-full h-14 sm:h-12 text-base sm:text-lg font-medium rounded-lg ${walletInfo.color} airbnb-button mobile-touch-target`}
                         onClick={() => {
                           // This would open the wallet pass URL when provided
                           console.log('Opening wallet pass...');
@@ -326,7 +326,7 @@ function App() {
                 <Button 
                   onClick={handlePassDownloaded}
                   variant="outline"
-                  className="w-full h-12 text-base font-medium rounded-lg border-2 sweet-border sweet-text hover:sweet-bg-light airbnb-button"
+                  className="w-full h-14 sm:h-12 text-base sm:text-lg font-medium rounded-lg border-2 sweet-border sweet-text hover:sweet-bg-light airbnb-button mobile-touch-target"
                 >
                   {t('passDownload.continueToDashboard')}
                 </Button>
@@ -341,10 +341,10 @@ function App() {
   // Dashboard view
   return (
     <div className="min-h-screen sweet-bg">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
         <div className="max-w-4xl mx-auto">
           {/* Language Selector Header */}
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-4 sm:mb-6">
             <LanguageSelector />
           </div>
 
@@ -371,11 +371,11 @@ function App() {
           )}
 
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <div className="text-center mb-6 sm:mb-8 px-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
               {t('dashboard.welcomeBack', { name: currentUser?.first_name || '' })}
             </h1>
-            <p className="text-gray-600">{t('dashboard.trackProgress')}</p>
+            <p className="text-base sm:text-lg text-gray-600">{t('dashboard.trackProgress')}</p>
           </div>
 
           {/* Reward Alert for 5-visit system */}
@@ -389,34 +389,34 @@ function App() {
           )}
 
           {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <Card className="text-center card-shadow">
-              <CardContent className="pt-6">
-                <div className="text-3xl mb-2">🏪</div>
-                <div className="text-2xl font-bold text-gray-900">
+              <CardContent className="pt-6 pb-6 px-4">
+                <div className="text-3xl sm:text-4xl mb-2">🏪</div>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {userStats?.total_visits || 0}
                 </div>
-                <p className="text-gray-600">{t('dashboard.totalVisits')}</p>
+                <p className="text-sm sm:text-base text-gray-600">{t('dashboard.totalVisits')}</p>
               </CardContent>
             </Card>
 
             <Card className="text-center card-shadow">
-              <CardContent className="pt-6">
-                <div className="text-3xl mb-2">⭐</div>
-                <div className="text-2xl font-bold text-gray-900">
+              <CardContent className="pt-6 pb-6 px-4">
+                <div className="text-3xl sm:text-4xl mb-2">⭐</div>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {userStats?.current_reward_points || 0}
                 </div>
-                <p className="text-gray-600">{t('dashboard.currentPoints')}</p>
+                <p className="text-sm sm:text-base text-gray-600">{t('dashboard.currentPoints')}</p>
               </CardContent>
             </Card>
 
             <Card className="text-center card-shadow">
-              <CardContent className="pt-6">
-                <div className="text-3xl mb-2">🎯</div>
-                <div className="text-2xl font-bold text-gray-900">
+              <CardContent className="pt-6 pb-6 px-4">
+                <div className="text-3xl sm:text-4xl mb-2">🎯</div>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {userStats?.visits_until_reward || 5}
                 </div>
-                <p className="text-gray-600">{t('dashboard.visitsUntilReward')}</p>
+                <p className="text-sm sm:text-base text-gray-600">{t('dashboard.visitsUntilReward')}</p>
               </CardContent>
             </Card>
           </div>
