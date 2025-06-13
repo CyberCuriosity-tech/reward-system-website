@@ -150,6 +150,7 @@ export function useTranslation() {
   const changeLanguage = (newLang: string) => {
     setLanguage(newLang);
     localStorage.setItem('selectedLanguage', newLang);
+    window.location.reload();
   };
 
   const t = (key: string, params?: Record<string, string | number>) => {
